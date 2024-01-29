@@ -1,0 +1,71 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<main>
+    <section>
+        <div class="fixed-title-new-expense">
+            <h1>Adicionar Despesa</h1>
+            <button id="previous">
+                <img src="{% static '/img/close.png' %}" alt="Imagem de um X">
+            </button>
+            <script src="{% static '/js/new-client.js' %}"></script>
+        </div>
+
+        <form class="form-general" action="{% url 'new_expense' %}" method="POST">
+
+            <div>
+                <h2 class="information-title">Informações do Lançamento</h2>
+            </div>   
+
+            {% csrf_token %}
+            <div class="form-body">
+                <div class="div-7"> {{ expenses_form.description.label_tag }} {{ expenses_form.description }} </div>
+                <div class="div-8"> 
+                    {{ expenses_form.date_of_competence.label_tag }}
+                    <div class="div-icon">
+                        <img src="{% static '/img/icons/Calendar.png' %}">
+                        {{ expenses_form.date_of_competence }} 
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="div-3"> {{ expenses_form.subcategory.label_tag }} {{ expenses_form.subcategory }} </div>
+                <div class="div-9"> {{ expenses_form.source.label_tag }} {{ expenses_form.source }} </div>
+                <div class="div-8"> 
+                    {{ expenses_form.value.label_tag }} 
+                    <div class="div-icon">
+                        <img src="{% static '/img/icons/Real.png' %}">
+                        {{ expenses_form.value }} 
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="information-title">Informações do Recebimento</h2>
+            </div> 
+            <div class="form-body">
+                <div class="div-8-1">
+                    {{ expenses_form.delivery_date.label_tag }}
+                    <div class="div-icon">
+                        <img src="{% static '/img/icons/Calendar.png' %}">
+                        {{ expenses_form.delivery_date }}
+                    </div>
+                </div>
+                <div class="div-9"> {{ expenses_form.receipt_account.label_tag }} {{ expenses_form.receipt_account }} </div>
+                <div class="div-5"> Recebido {{ expenses_form.receipt_status }} </div>
+            </div>
+            <div class="form-body">
+                <div class="div-6"> {{ expenses_form.comments.label_tag }} {{ expenses_form.comments }} </div>
+            </div>
+            <div>
+                <button class="save-button" type="submit">Salvar</button>
+            </div>
+        </form>
+        <script src="{% static '/js/value.js' %}"></script>
+        <script src="{% static '/js/date.js' %}"></script>
+        
+    </section>
+</main>
+
+{% endblock %}

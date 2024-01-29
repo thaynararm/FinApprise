@@ -1,0 +1,45 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<main>
+    <section>
+        <div class="fixed-title-general">
+            <h1>Adicionar Fornecedor</h1>
+            <button id="previous">
+                <img src="{% static '/img/close.png' %}" alt="Imagem de um X">
+            </button>
+            <script src="{% static '/js/new-client.js' %}"></script>
+        </div>
+       
+        <form class="form-general" action="{% url 'new_supplier' %}" method="POST">
+            <div>
+                <h2 class="information-title">Informações do Fornecedor</h2>
+            </div>   
+        
+            {% csrf_token %}
+            <div class="form-body">
+                <div class="div-1"> {{ supplier_form.company_name.label_tag }} {{ supplier_form.company_name }} </div>
+                <div class="div-2"> {{ supplier_form.cnpj_cpf.label_tag }} {{ supplier_form.cnpj_cpf }} </div>
+            </div>
+            <div class="form-body">
+                <div class="div-3"> {{ supplier_form.seller_name.label_tag }} {{ supplier_form.seller_name }} </div>
+                <div class="div-4"> {{ supplier_form.contact.label_tag }} {{ supplier_form.contact }} </div>
+                <div class="div-4"> {{ supplier_form.uf.label_tag }} {{ supplier_form.uf }} </div>
+                <div class="div-4-1"> {{ supplier_form.city.label_tag }} {{ supplier_form.city }} </div>
+            </div>
+            <div class="form-body">
+                <div class="div-1"> {{ supplier_form.address.label_tag }} {{ supplier_form.address }} </div>
+                <div class="div-2"> {{ supplier_form.email.label_tag }} {{ supplier_form.email }} </div>
+            </div>
+            <div class="form-body">
+                <div class="div-6"> {{ supplier_form.observations.label_tag }} {{ supplier_form.observations }} </div>
+            </div>
+            <div>
+                <button class="save-button" type="submit">Salvar</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+{% endblock %}

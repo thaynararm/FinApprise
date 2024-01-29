@@ -1,0 +1,49 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<main>
+    <section>
+        <div class="fixed-title-general">
+            <h1>Adicionar Cliente</h1>
+            <button id="previous">
+                <img src="{% static '/img/close.png' %}" alt="Imagem de um X">
+            </button>
+            <script src="{% static '/js/new-client.js' %}"></script>
+        </div>
+        
+        <form class="form-general" action="{% url 'register_client' %}" method="POST">
+            
+            <div>
+                <h2 class="information-title">Informações do Cliente</h2>
+            </div>   
+            
+            {% csrf_token %}
+            <div class="form-body">
+                <div class="div-1"> {{ clients_form.company_name.label_tag }} {{ clients_form.company_name }} </div>
+                <div class="div-2"> {{ clients_form.cnpj_cpf.label_tag }} {{ clients_form.cnpj_cpf }} {{ clients_form.cnpj_cpf.errors }}</div>
+                
+            </div>
+            <div class="form-body">
+                <div class="div-3"> {{ clients_form.responsible_name.label_tag }} {{ clients_form.responsible_name }} </div>
+                <div class="div-4"> {{ clients_form.contact.label_tag }} {{ clients_form.contact }} </div>
+                <div class="div-4"> {{ clients_form.uf.label_tag }} {{ clients_form.uf }} </div>
+                <div class="div-4-1"> {{ clients_form.city.label_tag }} {{ clients_form.city }} </div>
+            </div>
+            <div class="form-body">
+                <div class="div-1"> {{ clients_form.address.label_tag }} {{ clients_form.address }} </div>
+                <div class="div-2"> {{ clients_form.email.label_tag }} {{ clients_form.email }} </div>
+            </div>
+            <div class="form-body">
+                <div class="div-6"> {{ clients_form.observations.label_tag }} {{ clients_form.observations }} </div>
+            </div>
+            <div>
+                <button class="save-button" type="submit">Salvar</button>
+            </div>
+        </form>
+
+    </section>
+</main>
+
+{% endblock %}

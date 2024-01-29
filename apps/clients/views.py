@@ -1,0 +1,36 @@
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from apps.clients.models import Clients
+from apps.clients.forms import ClientsForms
+from apps.utilities.views import name_hello
+
+
+@login_required(login_url='login')
+def register_client(request):    
+    #Exibe e instancia o formulário
+    clients_form = ClientsForms() 
+
+    if request.method == 'POST':
+        clients_form = ClientsForms(request.POST)
+
+        new_company_name = request.POST['company_name']
+
+        #Verifica se o nome do cliente já está cadastrado
+        if Clients.objects.filter(company_name=new_company_name).exists():
+            messages.error(request, 'Nome da empresa já cadastrado!')
+
+        #Verifica se o formulário é valido e salva no banco de dados
+        if clients_form.is_valid():
+                try:
+                    clients_form.save()
+                    messages.success(request, 'Novo cliente cadastrado!')
+                    return redirect('index')
+                except Exception as e:
+                    messages.error(request, 'Ocorreu um erro ao cadastrar o cliente!')
+                    print(e)
+            
+    name = name_hello(request)
+    return render(request, 'register_clients.html', {'clients_form': clients_form, 'name': name})
+
+

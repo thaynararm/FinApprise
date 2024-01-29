@@ -1,0 +1,32 @@
+/* estilizações em comum do index*/
+
+body{
+    background: linear-gradient(to bottom, var(--background1), var(--background2));
+    background-attachment: fixed;
+}
+
+main{
+    margin-top: 2rem;
+    margin-left: 0.313rem;
+}
+
+.general{
+    display: flex;
+}
+
+.section-menu{
+    width: 20%;
+}
+
+.section-finance{
+    flex: 1;
+    margin-left: 2.5rem;
+}
+
+.financial-information{
+    display: flex;
+}
+
+.button-and-balances{
+    min-width: 80%
+}

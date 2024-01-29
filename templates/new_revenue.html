@@ -1,0 +1,68 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<main>
+    <section>
+        <div class="fixed-title-new-revenue">
+            <h1>Adicionar Receita</h1>
+            <button id="previous">
+                <img src="{% static '/img/close.png' %}" alt="Imagem de um X">
+            </button>
+            <script src="{% static '/js/new-client.js' %}"></script>
+        </div>
+
+        <form class="form-general" action="{% url 'new_revenue' %}" method="POST">
+
+            <div>
+                <h2 class="information-title">Informações do Lançamento</h2>
+            </div>   
+
+            {% csrf_token %}
+            <div class="form-body">
+                <div class="div-7"> {{ revenues_form.description.label_tag }} {{ revenues_form.description }} </div>
+                <div class="div-8"> 
+                    {{ revenues_form.date_of_competence.label_tag }}
+                    <div class="div-icon">
+                        <img src="{% static '/img/icons/Calendar.png' %}">
+                        {{ revenues_form.date_of_competence }} 
+                    </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="div-3"> {{ revenues_form.subcategory.label_tag }} {{ revenues_form.subcategory }} </div>
+                <div class="div-9"> {{ revenues_form.source.label_tag }} {{ revenues_form.source }} </div>
+                <div class="div-8"> 
+                    {{ revenues_form.value.label_tag }} 
+                    <div class="div-icon">
+                        <img src="{% static '/img/icons/Real.png' %}">
+                        {{ revenues_form.value }} 
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="information-title">Informações do Recebimento</h2>
+            </div> 
+            <div class="form-body">
+                <div class="div-8-1">
+                    {{ revenues_form.delivery_date.label_tag }}
+                    <div class="div-icon">
+                        <img src="{% static '/img/icons/Calendar.png' %}">
+                        {{ revenues_form.delivery_date }}
+                    </div>
+                </div>
+                <div class="div-9"> {{ revenues_form.receipt_account.label_tag }} {{ revenues_form.receipt_account }} </div>
+                <div class="div-5"> Recebido {{ revenues_form.receipt_status }} </div>
+            </div>
+            <div class="form-body">
+                <div class="div-6"> {{ revenues_form.comments.label_tag }} {{ revenues_form.comments }} </div>
+            </div>
+            <div>
+                <button class="save-button" type="submit">Salvar</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+{% endblock %}

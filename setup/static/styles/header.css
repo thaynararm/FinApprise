@@ -1,0 +1,103 @@
+/* estilizações do cabeçalho */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.625rem;
+}
+
+header div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--header-color)
+}
+
+header a{
+    text-decoration: none;
+}
+
+header h1{
+    font-size: var(--brand-name);
+    font-family: var(--font-mallanna);
+}
+
+header h2{
+    font-size: var(--hello-and-menu-name);
+    font-family: var(--font-jaldi);
+    text-shadow: 0.125rem 0.125rem 0.625rem var(--header-color);
+    margin-right: 1.188rem;
+}
+
+header img{
+    width: var(--icons-header);
+    height: var(--icons-header);
+    margin-right: 1.438rem;
+    transition: 0.3s;
+    background-color: transparent;
+    border-radius: 5rem;
+}
+
+header img:hover{
+    box-shadow: 0rem 0rem 2rem var(--menu-color);
+    background-color: var(--selected-background);
+}
+
+.img-finapprise{
+    width: auto;
+    height: auto;
+    border-radius: 0rem;
+}
+
+.img-finapprise:hover{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+header button{
+    cursor: pointer;
+}
+
+.dropdown-menu{
+    position: relative;
+    display: block;
+    z-index: 1000000;
+}
+
+.dropdown-menu-content{
+    display: none;
+    position: absolute;
+    background-color: var(--background1);
+    left: -5rem;
+    border-radius: 0.5rem;
+}
+
+.dropdown-menu:hover .dropdown-menu-content{
+    display: block;
+}
+
+.dropdown-menu-content a{
+    display: block;
+    font-family: var(--font-istok);
+    text-decoration: none;
+    color: var(--header-color);
+    font-size: var(--options-menu);
+    padding: 1rem 0.5rem;
+}
+
+.dropdown-menu-content a:hover{
+    background-color: var(--selected-background);
+}
+
+.messages{
+    background-color: var(--selected-background);
+    color: var(--menu-color);
+    border: 0.063rem solid var(--selected-background);
+    float: right;
+    font-family: var(--font-jaldi);
+    font-size: var(--real);
+    border-radius: 0.25rem;
+    padding: 0.875rem 5.5rem 0.875rem 5.5rem;
+    margin-bottom: 2rem;
+}

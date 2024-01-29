@@ -1,0 +1,87 @@
+body{
+    background: linear-gradient(to bottom, var(--background1), var(--background2));
+    background-attachment: fixed;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+
+main{
+    margin-top: 2rem;
+    margin-left: 0.313rem;
+}
+
+main section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+main h1{
+    font-size: 2rem;
+    font-family: var(--font-fira-sans-condensed);
+    color: var(--menu-color);
+    padding-top: 0.575rem;
+    padding-bottom: 1.625rem;
+}
+
+main img{
+    width: 4.063rem;
+    height: 4.063rem;
+    align-items: center;
+    padding-top: 1.563rem;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.313rem;
+}
+
+form label{
+    font-family: var(--font-fira-sans-condensed);
+    font-size: var(--balances-title);
+    padding: 0.625rem 0rem 0.625rem 0rem;
+}
+
+form input{
+    font-size: var(--balances-title);
+    padding: 0.625rem 0rem 0.625rem 0.563rem;
+    width: 35rem;
+    background-color: var(--selected-background);
+    border-radius: 0.25rem;
+    border-color: var(--menu-color);
+    border-width: 0.05rem;
+}
+
+.section-bigger{
+    background-color: var(--selected-background);
+    margin: 0rem 20rem 0rem 20rem;
+    border-radius: 2rem;
+}
+
+.save-button{
+    float: right;
+    font-family: var(--font-jaldi);
+    font-size: var(--real);
+    color: var(--menu-color);
+    border: 0.063rem solid var(--header-color);
+    border-radius: 0.25rem;
+    padding: 0.875rem 5.5rem 0.875rem 5.5rem;
+    margin: 2rem 0rem 3rem 0rem;
+    box-shadow: 0.0rem 0.25rem 0.25rem var(--menu-color);
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.save-button:hover{
+    background-color: var(--selected-background);
+}
+
+
+

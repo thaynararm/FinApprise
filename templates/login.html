@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/styles/variables.css' %}">
+    <link rel="stylesheet" href="{% static '/styles/login.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Jaldi&family=Mallanna&family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
+    <title>FinApprise</title>
+</head>
+
+<body>
+    <header>
+        <a href="{% url 'index'%}">
+            <img src="{% static '/img/header/FinApprise.png' %}">
+        </a>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h1>Bem Vindo (a)</h1>
+            </div>
+        </section>
+        <section class="section-bigger">
+            <div>
+                <img src="{% static '/img/UserLogin.png' %}" alt="Imagem de Perfil">
+            </div>
+            <div>
+                <form action="{% url 'login' %}" method='POST'>
+                    {% csrf_token %}
+                    <div>
+                        <div> {{ form.username.label_tag }} {{ form.username }} </div>
+                        <div> {{ form.password.label_tag }} {{ form.password }} </div>
+                    </div>
+                    <div> 
+                        <button class="save-button" type="submit">Entrar</button> 
+                    </div>
+                </form>
+        </section>        
+    </main>
+    
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+/* Título que fica fixo na página com o botão de fechar */
+
+.fixed-title-general{
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-fira-sans-condensed);
+    font-size: var(--title-menu);
+    background-color: var(--background2);
+    padding: 0.688rem;
+    border-top: 0.1rem solid var(--black);
+    box-shadow: 0.0rem 0.25rem 0.25rem var(--menu-color);
+    margin-bottom: 1.313rem;
+}
+
+.fixed-title-general button{
+    cursor: pointer;
+}
+
+.fixed-title-general button:hover{
+    width: 1.825rem;
+    right: 1.825rem;
+}
+
+.fixed-title-general img{
+    width: var(--icons-header);
+    right: var(--icons-header);
+    margin-right: 0.375rem;
+}
+
+
+/* Título que fica no formulário informando sobre o que se trata o formulário */
+
+.information-title{
+    font-family: var(--font-fira-sans-condensed);
+    font-size: var(--title-menu);
+    margin: 1.125rem 0rem 1.125rem 0rem ;
+    padding: 1.188rem 0rem 1.188rem 0rem;
+    border-bottom: 0.1rem solid var(--black);
+}
+
+.information-subtitle{
+    font-family: var(--font-fira-sans-condensed);
+    font-size: var(--title-menu);
+    margin: 1.125rem 0rem 1.125rem 0rem ;
+    padding: 1.188rem 0rem 1.188rem 0rem;
+    border-bottom: 0.1rem solid var(--black);
+}
+
+/* Corpo do formulário */
+
+.form-general{
+    margin: 1.125rem;
+    padding: 0rem 0rem 1.188rem 0rem;
+}
+
+.form-general label{
+    font-family: var(--font-fira-sans-condensed);
+    font-size: var(--balances-title);
+    padding: 0.625rem 0rem 0.625rem 0rem;
+}
+
+.form-general input, select{
+    font-size: var(--balances-title);
+    font-family: var(--font-fira-sans-condensed);
+    height: 2.5rem;
+    padding-left: 0.3rem;
+    background-color: var(--selected-background);
+    border-radius: 0.25rem;
+    border-color: transparent;
+    border-width: 0.05rem;
+    
+}
+
+.new-product{
+    border-bottom: 0.1rem solid var(--black);
+}
+
+.new-item{
+    padding: 3rem 0rem;
+}
+
+.form-body{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.form-body img{
+    width: var(--icons-header);
+    right: var(--icons-header);
+    margin-right: 0.375rem;
+}
+
+.form-body div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-body .div-1{
+    width: 70%;
+    padding-right: 3.125rem;
+}
+
+.form-body .div-2{
+    width: 30%;
+}
+
+.form-body .div-3{
+    width: 50%;
+    padding-right: 3.125rem;
+}
+
+.form-body .div-4{
+    width: 15%;
+    padding-right: 3.125rem;
+}
+
+.form-body .div-4-1{
+    width: 15%;
+}
+
+.form-body .div-5{
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2.5rem;
+    margin-top: 2rem;
+    font-family: var(--font-fira-sans-condensed);
+    padding: 0.625rem 0rem 0.625rem 0rem;
+    font-size: 1.1rem;
+    width: 8%;
+    padding-right: 3.125rem;
+}
+
+.form-body .div-5 input{
+    margin-left: 1rem;
+}
+
+.form-body .div-6{
+    width: 100%;
+}
+
+.form-body .div-6 input{
+    padding-bottom: 5rem;
+}
+
+.form-body .div-7{
+    width: 80%;
+    padding-right: 3.125rem;
+}
+
+.form-body .div-8{
+    width: 20%;
+}
+
+.form-body .div-8-1{
+    width: 20%;
+    padding-right: 3.125rem
+}
+
+.form-body .div-9{
+    width: 27%;
+    padding-right: 3.125rem;
+}
+
+
+/* Campos com ícones */
+
+.form-body .div-icon{
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    background-color: var(--selected-background);
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    outline: none;
+    height: 1.9rem;
+}
+
+.form-body .div-icon input{
+    flex: 1;
+    background-color: transparent;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+.form-body .div-icon img{
+    width: auto;
+    height: 100%;
+}
+
+.form-body .div-icon input:focus {
+    border-color: transparent; /* Altera a cor da borda quando o input está focado */
+    /* Outros estilos... */
+}
+
+
+/* Botão de salvar as informações */
+
+.save-button{
+    float: right;
+    font-family: var(--font-jaldi);
+    font-size: var(--real);
+    color: var(--green);
+    border: 0.063rem solid var(--green);
+    border-radius: 0.25rem;
+    padding: 0.875rem 5.5rem 0.875rem 5.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0.0rem 0.25rem 0.25rem var(--menu-color);
+    cursor: pointer;
+}
+
+.save-button:hover{
+    background-color: var(--selected-background);
+}
+
+
+/* Estilização do calendário que abre ao selecionar um campo tipo date */
+
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+    background-color: var(--grey-background-calendar);
+    border-radius: 0.5rem;
+}
+
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0.2em;
+    align-items: center;
+}
+
+    /* Botões para navegar entre os meses */
+
+    .ui-datepicker .ui-datepicker-prev {
+        left: 2px;
+        position: absolute;
+        top: 28%;
+        width: 1.8em;
+        height: 1.8em;
+        background-image: url(../img/icons/prev.png);
+        background-size: 100% auto;
+    }
+
+    .ui-datepicker .ui-datepicker-next {
+        right: 2px;
+        position: absolute;
+        top: 28%;
+        width: 1.8em;
+        height: 1.8em;
+        background-image: url(../img/icons/next.png);
+        background-size: 100% auto;
+    }
+
+    .ui-datepicker .ui-datepicker-prev-hover,
+    .ui-datepicker .ui-datepicker-next-hover {
+        top: 28%;
+    }
+
+    .ui-datepicker .ui-datepicker-prev-hover {
+        left: 1px;
+    }
+
+    .ui-datepicker .ui-datepicker-next-hover {
+        right: 1px;
+    }
+
+    .ui-datepicker .ui-datepicker-prev span,
+    .ui-datepicker .ui-datepicker-next span {
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: -8px;
+        top: 50%;
+        margin-top: -8px;
+    }
+
+    /* Seleção de mês e ano */
+
+    .ui-datepicker .ui-datepicker-title {
+        margin: 0.5rem 3.3em;
+        line-height: 1.8em;
+        text-align: center;
+        font-size: var(--options-menu);
+    }
+
+    .ui-datepicker .ui-datepicker-title select {
+        font-size: var(--options-menu);
+        padding: 0.5rem 0rem;
+        
+    } 
+
+    .ui-datepicker select.ui-datepicker-month{
+        width: 40%;
+        margin-right: 1rem;
+    }
+
+    .ui-datepicker select.ui-datepicker-year {
+        width: 40%;
+    }
+
+    /* Tabela com as datas */
+    .ui-datepicker table {
+        width: 100%;
+        font-size: var(--options-menu);
+        font-family: var(--font-fira-sans-condensed);
+        border-collapse: collapse;
+        margin: 0 0 .4em;
+        text-align: center;
+    }
+
+    .ui-datepicker th {
+        padding: 1em 0.4em;
+        text-align: center;
+        font-weight: bold;
+        border: 0;
+    }
+
+    .ui-datepicker td {
+        border: 0;
+        padding: 0.1rem;
+    }
+
+    .ui-datepicker td span,
+    .ui-datepicker td a {
+        display: block;
+        padding: 0.2em;
+        text-align: center;
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    /* RTL support */
+
+    .ui-datepicker-rtl {
+        direction: rtl;
+    }
+
+    .ui-datepicker-rtl .ui-datepicker-prev {
+        right: 2px;
+        left: auto;
+    }
+
+    .ui-datepicker-rtl .ui-datepicker-next {
+        left: 2px;
+        right: auto;
+    }
+
+    .ui-datepicker-rtl .ui-datepicker-prev:hover {
+        right: 1px;
+        left: auto;
+    }
+
+    .ui-datepicker-rtl .ui-datepicker-next:hover {
+        left: 1px;
+        right: auto;
+    }
+
+    .ui-datepicker-rtl .ui-datepicker-buttonpane {
+        clear: right;
+    }
+
+    .ui-datepicker-rtl .ui-datepicker-buttonpane button {
+        float: left;
+    }
+
+    .ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+    .ui-datepicker-rtl .ui-datepicker-group {
+        float: right;
+    }
+
+    .ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+    .ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+        border-right-width: 0;
+        border-left-width: 1px;
+    }
+
+    /* Icons */
+    .ui-datepicker .ui-icon {
+        display: block;
+        text-indent: -99999px;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        left: .5em;
+        top: .3em;
+        background-image: url("{% static 'img/ui-icons_222222_256x240.png' %}");
+    }

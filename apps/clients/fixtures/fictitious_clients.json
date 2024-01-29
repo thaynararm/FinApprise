@@ -1,0 +1,50 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields":{
+            "username": "testuser",
+            "password": "testpassword"
+        }
+    },
+    {
+        "model": "clients.clients",
+        "pk": 1,
+        "fields": {
+            "company_name": "Empresa ABC Ltda.",
+            "responsible_name": "João da Silva",
+            "cnpj_cpf": "123.456.789/0001-01",
+            "contact": "(11) 98765-4321",
+            "uf": "SP",
+            "city": "São Paulo",
+            "address": "Rua Exemplo, 123",
+            "email": "joao.silva@empresaabc.com",
+            "observations": "Cliente desde 2022",
+            "autor": 1
+        }
+    },
+    {
+        "model": "clients.clients",
+        "pk": 2,
+        "fields": {
+            "company_name": "Empresa DEF Ltda.",
+            "responsible_name": " ",
+            "cnpj_cpf": " ",
+            "contact": " ",
+            "uf": "DF",
+            "city": "Taguatinga",
+            "address": " ",
+            "email": " ",
+            "observations": " ",
+            "autor": 1
+        }
+    },
+    {
+        "model": "clients.clients",
+        "pk": 3,
+        "fields": {
+            "company_name": "Empresa FGH Ltda.",
+            "autor": 1
+        }
+    }
+]

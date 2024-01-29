@@ -1,0 +1,35 @@
+{% load static %}
+<header>
+    <div>
+        <a href="{% url 'index'%}"><img class="img-finapprise" src="{% static '/img/header/FinApprise.png' %}"></a>
+    </div>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <script src="{% static '/js/alert.js' %}"></script>
+
+    <div>
+        <h2>Olá, {{ name }}!</h2>
+        <div class="dropdown-menu">
+            <button><img src="{% static '/img/header/settings.png' %}" alt="Imagem de uma Engrenagem"></button>
+            <div class="dropdown-menu-content">
+                <a href="#">Categorias</a>
+                <a href="#">Contas</a>
+            </div>
+        </div>
+        <div class="dropdown-menu">
+            <button><img src="{% static '/img/header/user.png' %}" alt="Imagem de Perfil"></button>
+            <div class="dropdown-menu-content">
+                <a href="#">Minha Conta</a>
+                <a href="#">Minha Empresa</a>
+                <a href="#">Sair</a>
+            </div>
+        </div>
+    </div>
+</header>

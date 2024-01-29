@@ -1,0 +1,74 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<main>
+    <section>
+        <div class="fixed-title-general">
+            <h1>Registrar Entrada de Produto</h1>
+            <button id="previous">
+                <img src="{% static '/img/close.png' %}" alt="Imagem de um X">
+            </button>
+            <script src="{% static '/js/new-client.js' %}"></script>
+        </div>
+
+        <form class="form-general" action="{% url 'product_entry' %}" method="POST">
+
+            <div>
+                <h2 class="information-title">Informações do Produto</h2>
+            </div>   
+
+            {% csrf_token %}
+            <section class="new-product">
+                <div class="form-body">
+                    <div class="div-6"> {{ products_entry_form.product_name.label_tag }} {{ products_entry_form.product_name }} </div>
+                    </div>
+                </div>
+                <div class="form-body">
+                    <div class="div-9"> {{ products_entry_form.unit_of_measurement.label_tag }} {{ products_entry_form.unit_of_measurement }} </div>
+                    <div class="div-9"> {{ products_entry_form.quantity.label_tag }} {{ products_entry_form.quantity }} </div>
+                    <div class="div-8-1"> 
+                        {{ products_entry_form.unitary_value.label_tag }} 
+                        <div class="div-icon">
+                            <img src="{% static '/img/icons/Real.png' %}">
+                            {{ products_entry_form.unitary_value }} 
+                        </div>
+                    </div>
+                    <div class="div-8"> 
+                        {{ products_entry_form.total_value.label_tag }} 
+                        <div class="div-icon">
+                            <img src="{% static '/img/icons/Real.png' %}">
+                            {{ products_entry_form.total_value }} 
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="product-container"></section>
+
+            <section class="new-item">
+                <div>
+                    <button class="save-button" id="new-item" type="button">Incluir novo item</buton>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <h2 class="information-subtitle">Informações Gerais</h2>
+                </div>             
+                <div class="form-body">
+                    <div class="div-9"> {{ products_entry_form.entry_date.label_tag }} {{ products_entry_form.entry_date }} </div>
+                    <div class="div-9"> {{ products_entry_form.supplier.label_tag }} {{ products_entry_form.supplier }} </div>
+                    <div class="div-9"> {{ products_entry_form.invoice_number.label_tag }} {{ products_entry_form.invoice_number }} </div>
+                </div>
+                <div class="form-body">
+                    <div class="div-6"> {{ products_entry_form.comments.label_tag }} {{ products_entry_form.comments }} </div>
+                </div>
+                <div>
+                    <button class="save-button" type="submit">Salvar</button>
+                </div>
+            </section>
+        </form>
+    </section>
+</main>
+
+{% endblock %}

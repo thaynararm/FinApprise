@@ -1,0 +1,53 @@
+/* Estilizações da parte do menu */
+
+.menu-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--selected-background);
+    padding: 0.5rem 0rem 0.5rem 0rem;
+    margin-bottom: 0.563rem;
+    font-family: var(--font-istok);
+    font-size: var(--title-menu);
+    color: var(--menu-color);
+    padding-right: 13rem;
+}
+
+.menu-ul{
+    margin-left: 2.25rem;
+    font-family: var(--font-istok);
+    font-size: var(--hello-and-menu-name);
+    color: var(--header-color);
+}
+
+.options-ul{
+    margin-bottom: 0.563rem;
+    margin-left: 0rem;
+    background-color: var(--background-not-selected);
+    font-size: var(--options-menu);    
+}
+
+.options-li{
+    display: flex;
+    text-decoration: none;
+    color: var(--menu-color);
+    padding: 0.6rem 0rem 0.2rem 1.75rem;
+}
+
+.menu-li{
+    margin-bottom: 0rem;
+    background-color: var(--background-not-selected);
+    padding: 0.5rem 0rem 0.5rem 0.5rem;
+    font-size: var(--hello-and-menu-name);
+}
+
+.options-li:hover, .menu-li:hover{
+    background-color: var(--selected-background);
+}
+
+.menu-image{
+    width: var(--icons-header);
+    height: var(--icons-header);
+    margin-right: 0.5rem;
+    margin-left: 0.375rem;
+}

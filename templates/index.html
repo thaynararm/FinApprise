@@ -1,0 +1,121 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<main>
+    <section class="general">
+        <section class="section-menu"> <!-- menu -->
+            <div class="menu-title">
+                <img class="menu-image" src="{% static '/img/main/menu.png' %}" alt="Imagem de menu com três listras">
+                <h1>MENU</h1>
+            </div>
+
+            <nav>
+                <ul class="menu-ul">
+                    <li class="menu-li"><h2>Visão Geral</h2></li>
+                    <ul class="options-ul">
+                        <li><a class="options-li" href="{% url 'index'%}">Página Inicial</a></li>
+                    </ul>
+                    <li class="menu-li"><h2>Financeiro</h2></li>
+                    <ul class="options-ul">
+                        <li><a class="options-li" href="#">Extrato de Movimentações</a></li>
+                        <li><a class="options-li" href="#">Contas Financeiras</a></li>
+                        <li><a class="options-li" href="#">Visão de Despesas</a></li>
+                        <li><a class="options-li" href="#">Visão de Receitas</a></li>
+                    </ul>
+                    <li class="menu-li"><h2>Estoque</h2></li>
+                    <ul class="options-ul">
+                        <li><a class="options-li" href="#">Cadastro de Produto</a></li>
+                        <li><a class="options-li" href="#">Registro de Entradas</a></li>
+                        <li><a class="options-li" href="#">Registro de Saídas</a></li>
+                        <li><a class="options-li" href="#">Registro de Trocas</a></li>
+                        <li><a class="options-li" href="#">Movimentações</a></li>
+                    </ul>
+                    <li class="menu-li"><h2>Clientes e Fornecedores</h2></li>
+                    <ul class="options-ul">
+                        <li><a class="options-li" href="{% url 'register_client'%}">Cadastro de Clientes</a></li>
+                        <li><a class="options-li" href="#">Cadastro de Fornecedores</a></li>
+                        <li><a class="options-li" href="#">Visão de Clientes</a></li>
+                        <li><a class="options-li" href="#">Visão de Fornecedores</a></li>
+                    </ul>
+                    <li class="menu-li"><h2>Relatórios</h2></li>
+                    <ul class="options-ul">
+                        <li><a class="options-li" href="#">DRE</a></li>
+                        <li><a class="options-li" href="#">Fluxo de Caixa</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </section> 
+
+        <section class="section-finance"> <!-- financeiro -->  
+            <section class="financial-information">
+                <div class="button-and-balances"> <!-- parte dos saldos -->
+                    <div class="section-count-button"> <!-- botão da conta escolhida -->
+                        <p>Conta Thaynara Martins
+                        <img src="{% static '/img/main/sort-down.png' %}"></p>
+                    </div> 
+                    <div class="balance-block"> <!--saldos -->
+                        <div>
+                            <ul>
+                                <li><p class="balance-block-text-balance">Saldo Atual</p></li>
+                                <li><p class="balance-block-real">R$</p>
+                                <p class="balance-block-number">0,00</p></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><p class="balance-block-text-revenue">Receita Mensal</p></li>
+                                <li><p class="balance-block-real">R$</p>
+                                <p class="balance-block-number">0,00</p></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><p class="balance-block-text-expense">Despesa Mensal</p></li>
+                                <li><p class="balance-block-real">R$</p>
+                                <p class="balance-block-number">0,00</p></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><p class="balance-block-text-projected">Saldo Projetado</p></li>
+                                <li><p class="balance-block-real">R$</p>
+                                <p class="balance-block-number">0,00</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plus-buttons"> <!-- botões de adição -->
+                    <a class="plus-buttons-revenue" href="#">Nova Receita</a>
+                    <a class="plus-buttons-expense" href="#">Nova Despesa</a>
+                    <a class="plus-buttons-transfer" href="#">Nova Transferência</a>
+                </div>
+            </section>
+
+            <section> <!-- contas financeiras -->
+                <h2 class="title-financial-accounts">Minhas Contas Financeiras</h2>
+                <a class="accounts-general" href="#">
+                    <div>
+                        <img src="{% static '/img/main/money.png' %}" alt="Imagem de um cifrão">
+                    </div>
+                    <div>
+                        <p class="accounts-title">Dinheiro</p>
+                        <p class="accounts-description">Movimentações em espécie</p>
+                    </div>
+                </a>
+                <a class="accounts-general" href="#">
+                    <div>
+                        <img src="{% static '/img/main/nubank.png' %}" alt="Imagem do banco nubnak">
+                    </div>
+                    <div>
+                        <p class="accounts-title">Nubank</p>
+                        <p class="accounts-description">Conta Corrente</p>
+                    </div>
+                </a>
+            </section>
+        </section>
+    </section>
+</main>
+
+{% endblock %}

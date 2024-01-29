@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/balances-section.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/form.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/new_revenues.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/new_expense.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Jaldi&family=Mallanna&family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>		
+    <link rel="stylesheet" href="{% static 'styles/selector-search.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{% static 'js/jquery.mask.min.js' %}"></script>
+    <script src="{% static 'js/city.js' %}" defer></script>
+    <!-- <script src="{% static 'js/selector-search.js' %}" defer></script>
+    <script src="{% static 'js/value.js' %}" defer></script>
+    <script src="{% static 'js/date.js' %}" defer></script>
+    <script src="{% static 'js/add-new-product.js' %}" defer></script> -->
+    
+    
+    <title>FinApprise</title>
+</head>
+
+<body>
+
+{% include 'partials/header.html' %}
+{% block content %} {% endblock %}
+
+</body>
+
+</html>

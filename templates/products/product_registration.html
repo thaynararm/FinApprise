@@ -1,0 +1,54 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<main>
+    <section>
+        <div class="fixed-title-general">
+            <h1>Adicionar Produto</h1>
+            <button id="previous">
+                <img src="{% static '/img/close.png' %}" alt="Imagem de um X">
+            </button>
+            <script src="{% static '/js/new-client.js' %}"></script>
+        </div>
+
+        <form class="form-general" action="{% url 'product_registration' %}" method="POST">
+
+            <div>
+                <h2 class="information-title">Informações do Produto</h2>
+            </div>   
+
+            {% csrf_token %}
+            <div class="form-body">
+                <div class="div-7"> {{ product_registration_form.product_name.label_tag }} {{ product_registration_form.product_name }} </div>
+                <div class="div-8"> {{ product_registration_form.product_code.label_tag }} {{ product_registration_form.product_code }} </div>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="div-3"> {{ product_registration_form.subcategory.label_tag }} {{ product_registration_form.subcategory }} </div>
+                <div class="div-9"> {{ product_registration_form.unit_of_measurement.label_tag }} {{ product_registration_form.unit_of_measurement }} </div>
+                <div class="div-8"> {{ product_registration_form.quantity_in_stock.label_tag }} {{ product_registration_form.quantity_in_stock }} </div>
+            </div>
+            <div class="form-body">
+                <div class="div-9"> 
+                    {{ product_registration_form.sale_value.label_tag }} 
+                    <div class="div-icon">
+                        <img src="{% static '/img/icons/Real.png' %}">
+                        {{ product_registration_form.sale_value }} 
+                    </div>
+                </div>
+                <div class="div-9"> {{ product_registration_form.location_in_stock.label_tag }} {{ product_registration_form.location_in_stock }} </div>
+                <div class="div-5"> Disponível {{ product_registration_form.availability }} </div>
+            </div>
+            <div class="form-body">
+                <div class="div-6"> {{ product_registration_form.comments.label_tag }} {{ product_registration_form.comments }} </div>
+            </div>
+            <div>
+                <button class="save-button" type="submit">Salvar</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+{% endblock %}
