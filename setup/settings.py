@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'apps.users.apps.UsersConfig',
     'apps.clients.apps.ClientsConfig',
     'apps.index.apps.IndexConfig',
-    # 'apps.supplier.apps.SupplierConfig',
+    'apps.suppliers.apps.SuppliersConfig',
     'apps.utilities.apps.UtilitiesConfig',
     # 'apps.revenues.apps.RevenuesConfig',
     # 'apps.expenses.apps.ExpensesConfig',

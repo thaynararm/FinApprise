@@ -1,37 +1,36 @@
-from django import forms
 import docbr 
-from apps.clients.models import Clients
+from django import forms
+from apps.suppliers.models import Suppliers
 
-
-class ClientsForms(forms.ModelForm):
+class SupplierForms(forms.ModelForm):
     class Meta:
-        model = Clients        #Especifica quais campos do modelo devem ser incluídos no formulário
+        model = Suppliers    #Especifica quais campos do modelo devem ser incluídos no formulário
 
-        #Especifica quais campos do modelo devem ser incluídos no formulário        
-        fields = ['company_name', 'cnpj_cpf', 'responsible_name', 'uf', 'city', 'contact', 'address', 'email', 'observations']
+        #Especifica quais campos do modelo devem ser incluídos no formulário
+        fields = ['company_name', 'cnpj_cpf', 'seller_name', 'contact','uf', 'city', 'address', 'email', 'observations']
             
         #Define os rótulos dos campos
         labels = { 
             'company_name': 'Nome da empresa',
             'cnpj_cpf': 'CNPJ ou CPF',
-            'responsible_name': 'Nome do Responsável pela Empresa',
+            'seller_name': 'Nome do Vendedor da Empresa',
             'contact': 'Número de Contato',
             'uf': 'Estado',
             'city': 'Cidade',
             'address': 'Endereço do Cliente',
             'email': 'Email',
-            'observations': 'Observações',
-            }
+            'observations': 'Observações'
+        }
 
         #Define como cada campo deve ser exibido
         widgets = {
             'company_name': forms.TextInput(attrs={
                 'placeholder': 'Digite o nome da empresa',}),
-            'cnpj_cpf': forms.NumberInput(attrs={
+            'cnpj_cpf': forms.TextInput(attrs={
                 'placeholder': 'Digite o CNPJ da empresa ou CPF do responsável',}),
-            'responsible_name': forms.TextInput(attrs={
+            'seller_name': forms.TextInput(attrs={
                 'placeholder': 'Digite o nome do responsável pela empresa',}),
-            'contact': forms.NumberInput(attrs={
+            'contact': forms.TextInput(attrs={
                 'placeholder': '(xx) xxxxx-xxxx',}),
             'uf': forms.Select(attrs={
                 'class': 'state-field',
@@ -41,16 +40,16 @@ class ClientsForms(forms.ModelForm):
                 'id': 'city'}),
             'address': forms.TextInput(attrs={
                 'placeholder': 'Digite o endereço da empresa ou do responsável',}),
-            'email': forms.EmailInput(attrs={
+            'email': forms.TextInput(attrs={
                 'placeholder': 'exemplo@email.com',}),
             'observations': forms.TextInput(attrs={
                 'placeholder': 'Observações',}),
         }
-    
 
+        
     def clean_contact(self):
         """Cria uma máscara padrão para salvar os contatos no banco de dados"""
-        
+    
         #Recupera o contato renderizado
         contact = self.cleaned_data['contact']
 
@@ -110,6 +109,4 @@ class ClientsForms(forms.ModelForm):
             raise forms.ValidationError("Insira um CNPJ ou um CPF válido")
 
         return cnpj_cpf
-            
-            
             

@@ -1,17 +1,18 @@
 import unittest
 from django.test import TestCase
-from clients.fixtures.information_storage import data_for_test_validate_form_with_correct_data
+from suppliers.fixtures.information_storage import data_for_test_validate_form_with_correct_data
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
-from apps.clients.models import Clients
+from apps.suppliers.models import Suppliers
 
 
-class ViewsClientsRegisterTestCase(TestCase):
+
+class ViewsSuppliersRegisterTestCase(TestCase):
 
     def setUp(self):
         """Cria o ambiente de testes"""
-        self.list_url = reverse('register_client')
+        self.list_url = reverse('register_supplier')
 
         self.new_user = User.objects.create_user(
             username='testuser', 
@@ -24,7 +25,7 @@ class ViewsClientsRegisterTestCase(TestCase):
 
 
     def test_status_code_when_submitted_logged(self):
-        """#Verifica se está sendo redirecionado para a página de index ao enviar o formulário com um usuário autenticado"""
+        """Verifica se está sendo redirecionado para a página de index ao enviar o formulário com um usuário autenticado"""
 
         #Pega as informações corretas para solicitar o POST
         data = data_for_test_validate_form_with_correct_data
@@ -52,14 +53,14 @@ class ViewsClientsRegisterTestCase(TestCase):
         redirect_url = response.url
 
         #Faz a verificação do teste
-        self.assertEqual('/login/?next=/register_client/', redirect_url, f'A página não está sendo redirecionada para a página de login, está indo para {redirect_url}')
+        self.assertEqual('/login/?next=/register_supplier/', redirect_url, f'A página não está sendo redirecionada para a página de login, está indo para {redirect_url}')
 
 
     def test_message_error_company_registered(self):
         """Verifica se está sendo redirecionado para a página de login ao enviar o formulário com um usuário sem autenticação """
 
         #Cria um objeto
-        self.object = Clients.objects.create(company_name="Empresa de Teste", autor=self.new_user)
+        self.object = Suppliers.objects.create(company_name="Empresa de Teste", autor=self.new_user)
 
         #Pega as informações corretas para solicitar o POST
         data = data_for_test_validate_form_with_correct_data

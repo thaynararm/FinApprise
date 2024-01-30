@@ -7,8 +7,8 @@ class ModelsClientsRegisterTestCase(TestCase):
     #Carrega o arquivo com os modelos de Clientsa
     fixtures = ['fictitious_clients']
        
-    #Verifica se os atributos dos campos do model estão funcionando corretamente
     def test_attributes_model_clients(self):
+        """Verifica se os atributos dos campos do model estão funcionando corretamente quando dados corretos são salvos no banco de dados"""
 
         #Recupera o modelo de Clients da fixture que possui chave pk = 1
         self.client = Clients.objects.get(pk=1)
@@ -44,8 +44,8 @@ class ModelsClientsRegisterTestCase(TestCase):
         #Compara o dicionário de dados esperados com o de dados informados.
         self.assertDictEqual(expected_data, actual_data, "Os campos do modelo de Clientes não estão funcionando corretamente")
 
-    #Verifica se os campos com blank=True estão aceitando espaços em branco     
     def test_checks_accepting_blank_fields(self):
+        """Verifica se os campos com blank=True estão aceitando espaços em branco"""     
 
         #Traz o cliente a ser usado no teste
         self.client = Clients.objects.get(pk=2)
@@ -63,8 +63,8 @@ class ModelsClientsRegisterTestCase(TestCase):
         for key, value in blank_fields.items():
             self.assertTrue(value.isspace(), f'O campo {key} do modelo de Clientes não está aceitando espaços em branco quando blank=True')
 
-    #Verifica se os campos com null=True estão aceitando espaços nulos
     def test_checks_accepting_null_fields(self):
+        """Verifica se os campos com null=True estão aceitando espaços nulos"""
         
         #Traz o cliente a ser usado no teste
         self.client = Clients.objects.get(pk=3)
@@ -84,11 +84,11 @@ class ModelsClientsRegisterTestCase(TestCase):
         for key, value in blank_fields.items():
             self.assertTrue(value is None, f'O campo {key} do modelo de Clientes não está aceitando espaços nulos quando null=True')
 
-    #Verifica se os campos com unique=True estão funcionando
     @unittest.expectedFailure
     def test_checks_duplicate_fields(self):
+        """Verifica se os campos com unique=True estão funcionando, a função espera uma falha pois este nome e cnpj já constam no banco de dados, portanto deve dar um erro de duplicidade em um campo com valores únicos"""
     
-        #Traz o cliente a ser usado no teste
+        #Tenta criar o cliente duplicado
         self.client_company_name = Clients.objects.create(
             company_name = 'Empresa ABC Ltda.',
             cnpj_cpf = '123.456.789/0001-01',
