@@ -7,7 +7,7 @@ class ModelsClientsRegisterTestCase(TestCase):
     #Carrega o arquivo com os modelos de Clientsa
     fixtures = ['fictitious_clients']
        
-    def test_attributes_model_clients(self):
+    def test_correct_attributes_model_clients(self):
         """Verifica se os atributos dos campos do model estão funcionando corretamente quando dados corretos são salvos no banco de dados"""
 
         #Recupera o modelo de Clients da fixture que possui chave pk = 1

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.revenues.models import Revenues, RecipeSubcategoriesRevenues, RecipeCategoriesRevenues
+from apps.revenues.models import NewRevenues, RecipeSubcategoriesRevenues, RecipeCategoriesRevenues
 
 
 class ListingRevenues(admin.ModelAdmin):
@@ -16,7 +16,7 @@ class ListingCategoriesRevenues(admin.ModelAdmin):
     list_display_links = ('category_name',)
 
 
-admin.site.register(Revenues, ListingRevenues)
+admin.site.register(NewRevenues, ListingRevenues)
 admin.site.register(RecipeSubcategoriesRevenues, ListingSubcategoriesRevenues)
 admin.site.register(RecipeCategoriesRevenues, ListingCategoriesRevenues)
 

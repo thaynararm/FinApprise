@@ -3,6 +3,7 @@
 from pathlib import Path, os
 from dotenv import load_dotenv
 from decouple import config
+from django.conf.global_settings import DATE_FORMAT, DATE_INPUT_FORMATS
 import logging
 
 load_dotenv()
@@ -136,7 +137,11 @@ LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
 
+
+
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
@@ -150,7 +155,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'setup/static'),
     os.path.join(BASE_DIR, 'apps/index/static'),
     os.path.join(BASE_DIR, 'apps/users/static'),
-    # os.path.join(BASE_DIR, 'apps/revenues/static'),
+    os.path.join(BASE_DIR, 'apps/revenues/static'),
     # os.path.join(BASE_DIR, 'apps/expenses/static'),
     # os.path.join(BASE_DIR, 'apps/products/static'),
 ]
@@ -182,10 +187,6 @@ MESSAGE_TAGS = {
 DECIMAL_SEPARATOR = ','
 USE_THOUSAND_SEPARATOR = True
 
-# Formato de exibição padrão para datas em modelos de template
-DATE_FORMAT = 'd/m/Y'
+DATE_FORMAT = ['%d/%m/%Y',]
 
-# Formatos de entrada de datas para campos de formulário
-DATE_INPUT_FORMATS = [
-    '%d/%m/%Y',  # Formato que você deseja
-]
+DATE_INPUT_FORMATS = ['%d/%m/%Y',]

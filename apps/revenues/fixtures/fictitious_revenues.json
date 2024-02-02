@@ -1,0 +1,68 @@
+[
+    {
+        "model": "clients.clients",
+        "pk": 1,
+        "fields": {
+            "company_name": "Empresa ABC Ltda.",
+            "responsible_name": "João da Silva",
+            "cnpj_cpf": "123.456.789/0001-01",
+            "contact": "(11) 98765-4321",
+            "uf": "SP",
+            "city": "São Paulo",
+            "address": "Rua Exemplo, 123",
+            "email": "joao.silva@empresaabc.com",
+            "observations": "Cliente desde 2022",
+            "autor": 1
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields":{
+            "username": "testuser",
+            "password": "testpassword"
+        }
+    },
+    {
+        "model": "revenues.recipecategoriesrevenues",
+        "pk": 1,
+        "fields": {
+            "category_name": "Receitas",
+            "autor": 1
+        }
+    },    
+    {
+        "model": "revenues.recipesubcategoriesrevenues",
+        "pk": 1,
+        "fields": {
+            "category_name": 1,
+            "subcategory_name": "Receitas de Vendas",
+            "autor": 1
+        }
+    },
+    {
+        "model": "revenues.recipesubcategoriesrevenues",
+        "pk": 2,
+        "fields": {
+            "category_name": 1,
+            "subcategory_name": "Receitas de Serviços",
+            "autor": 1
+        }
+    },
+    {
+        "model": "revenues.newrevenues",
+        "pk": 1,
+        "fields": {
+            "description": "Descrição da Receita",
+            "date_of_competence": "2024-02-01",
+            "subcategory": 2,
+            "source": 1,
+            "value": "1876.90",
+            "delivery_date": "2024-02-29",
+            "receipt_account": "Conta Teste",
+            "receipt_status": "True",
+            "comments": "Observação de teste",
+            "autor": 1
+        }
+    }
+]

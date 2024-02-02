@@ -1,6 +1,6 @@
 from django import forms
 from datetime import datetime
-from apps.revenues.models import Revenues
+from apps.revenues.models import NewRevenues
 
 
 
@@ -16,7 +16,7 @@ class RevenuesForms(forms.ModelForm):
     
 
     class Meta:
-        model = Revenues        #Especifica quais campos do modelo devem ser incluídos no formulário
+        model = NewRevenues        #Especifica quais campos do modelo devem ser incluídos no formulário
 
         #Especifica quais campos do modelo devem ser incluídos no formulário        
         fields = ['description', 'date_of_competence', 'subcategory', 'source', 'value', 'delivery_date', 'receipt_account', 'receipt_status', 'comments']
