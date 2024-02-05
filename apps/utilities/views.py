@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
 
-#Retorna o primeiro e último nome do usuário -> usado para adicionar no header
+
 @login_required(login_url='login')
 def name_hello(request):
+    """#Retorna o primeiro e último nome do usuário -> usado para adicionar no header"""
 
     full_name = request.user.get_full_name()
 

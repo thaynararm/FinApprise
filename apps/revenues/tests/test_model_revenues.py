@@ -3,6 +3,7 @@ from django.test import TestCase
 from apps.revenues.models import *
 from datetime import date
 from apps.revenues.fixtures.information_storage import *
+from django.contrib.auth.models import User
 
 
 class BaseTestCase(TestCase):
