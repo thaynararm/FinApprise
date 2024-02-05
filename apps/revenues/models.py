@@ -36,7 +36,7 @@ class RecipeCategoriesRevenues(BaseModelWithAutor):
 
 class RecipeSubcategoriesRevenues(BaseModelWithAutor):
     category_name = models.ForeignKey(RecipeCategoriesRevenues, on_delete=models.CASCADE)
-    subcategory_name = models.CharField(max_length=100, blank=False, null=True)
+    subcategory_name = models.CharField(max_length=100, blank=False, null=True, unique=True)
     autor = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
@@ -53,7 +53,7 @@ class NewRevenues(BaseModelWithAutor):
     receipt_account = models.CharField(max_length=100)
     receipt_status = models.BooleanField(default=False)
     comments = models.TextField(blank=True, null=True)
-    autor = models.ForeignKey(User, on_delete=models.CASCADE, default=1, related_name='revenues_autor')
+    autor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='revenues_autor')
 
 
     def __str__(self):
